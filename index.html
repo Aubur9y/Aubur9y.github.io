@@ -71,6 +71,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DS-week6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/09/DS-week6/" class="article-date">
+  <time class="dt-published" datetime="2023-05-09T12:59:47.000Z" itemprop="datePublished">2023-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/09/DS-week6/">DS-week6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Inter-Process-Communication"><a href="#Inter-Process-Communication" class="headerlink" title="Inter-Process Communication"></a>Inter-Process Communication</h3><ul>
+<li>the way processes on different machines can exchange information</li>
+<li><strong>low-level message passing</strong>, offered by the <strong>underlying network</strong></li>
+<li>Two models for communication:<ul>
+<li>Remote Procedure Call (RPC)</li>
+<li>Message-Oriented Middleware (MOM)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Remote-Procedure-Call"><a href="#Remote-Procedure-Call" class="headerlink" title="Remote Procedure Call"></a>Remote Procedure Call</h3><ul>
+<li>aims at <strong>hiding</strong> most of the intricacies(复杂) of <strong>message passing</strong></li>
+<li>ideal for <strong>client-server applications</strong></li>
+</ul>
+<p>Example:</p>
+<p>newlist &#x3D; append(data, dblist)</p>
+<p>Append is a RPC, <strong>client stub</strong> is offered to the calling client, the client send to server and client stub calls receive, blocking itself until reply comes back. When message arrive at server, server’s OS passes it to a <strong>server stub</strong>, unpack and call server procedure, the server perform and return the results to the server stub</p>
+<h3 id="Parameter-Passing"><a href="#Parameter-Passing" class="headerlink" title="Parameter Passing"></a>Parameter Passing</h3><ul>
+<li>parameter marshalling (transforming data from one representation or format to another)</li>
+<li>not straightforward</li>
+<li>solution is to transform data into a <strong>machine and network-independent format</strong> making sure that <strong>both communicating parties expect the same message data type</strong></li>
+</ul>
+<h3 id="Asynchronous-RPCS"><a href="#Asynchronous-RPCS" class="headerlink" title="Asynchronous RPCS"></a>Asynchronous RPCS</h3><ul>
+<li>client will continue without blocking as soon as the server receive the message</li>
+</ul>
+<h3 id="Message-Oriented-Middleware"><a href="#Message-Oriented-Middleware" class="headerlink" title="Message-Oriented Middleware"></a>Message-Oriented Middleware</h3><ul>
+<li>message-queuing</li>
+<li>persistent asynchronous commuication</li>
+<li>sender posts a message in the queue, receiver retrieves the message form the queue</li>
+<li>apps communicate by <strong>inserting messages in specific queues</strong></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/09/DS-week6/" data-id="clhgaoooo0000htdt4vbwg3yn" data-title="DS-week6" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-DS-week5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/09/DS-week5/" class="article-date">
@@ -509,6 +577,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/05/09/DS-week6/">DS-week6</a>
+          </li>
         
           <li>
             <a href="/2023/05/09/DS-week5/">DS-week5</a>
