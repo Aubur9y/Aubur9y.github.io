@@ -71,6 +71,34 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DS-week4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/09/DS-week4/" class="article-date">
+  <time class="dt-published" datetime="2023-05-09T09:39:37.100Z" itemprop="datePublished">2023-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/09/DS-week4/" data-id="clhg3j7ho000078dt5p199q0y" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-DS-week3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/09/DS-week3/" class="article-date">
@@ -94,7 +122,7 @@
 <li>by delegating naming responsibilities</li>
 </ol>
 <p><strong>The internet is the biggest distributed system</strong></p>
-<h3 id="Centralised-Naming-Approach"><a href="#Centralised-Naming-Approach" class="headerlink" title="Centralised Naming Approach"></a>Centralised Naming Approach</h3><ol>
+<h2 id="Addressing-machanisms"><a href="#Addressing-machanisms" class="headerlink" title="Addressing machanisms"></a>Addressing machanisms</h2><h3 id="Centralised-Naming-Approach"><a href="#Centralised-Naming-Approach" class="headerlink" title="Centralised Naming Approach"></a>Centralised Naming Approach</h3><ol>
 <li>Any name is handed out once and only once</li>
 <li>a single point of contact</li>
 </ol>
@@ -137,20 +165,44 @@
 </li>
 </ol>
 <h3 id="Domain-Names"><a href="#Domain-Names" class="headerlink" title="Domain Names"></a>Domain Names</h3><ol>
-<li><p>created because humans find IP addresses <strong>hard to read</strong></p>
-</li>
-<li><p>Domain Name System (DNS) is used to <strong>create associations between human-readable names and IP addresses</strong> (eg. <a target="_blank" rel="noopener" href="http://www.bbc.co.uk/">www.bbc.co.uk</a>)</p>
-</li>
-<li><p>‘delegation model’ is complex, as it has aspects of <strong>geographical delegation</strong></p>
-<ul>
+<li>created because humans find IP addresses <strong>hard to read</strong></li>
+<li>Domain Name System (DNS) is used to <strong>create associations between human-readable names and IP addresses</strong> (eg. <a target="_blank" rel="noopener" href="http://www.bbc.co.uk/">www.bbc.co.uk</a>)</li>
+<li>‘delegation model’ is complex, as it has aspects of <strong>geographical delegation</strong><ul>
 <li>eg. ‘.co.uk’ are for UK-based companies</li>
 </ul>
 </li>
+</ol>
+<ul>
 <li><p>DNS cannot allocate <em>batches</em> of names upfront, and need to respond in <strong>real time</strong> to requests to ranslate names into <strong>IP addresses</strong></p>
 </li>
 <li><p>achieve this by being a <strong>Distributed System</strong> consisting of a <em>hierarchy</em> of servers with the most authoritative server at the <em>top</em> of the hierarchy</p>
 </li>
-</ol>
+</ul>
+<h2 id="Protocols"><a href="#Protocols" class="headerlink" title="Protocols"></a>Protocols</h2><ul>
+<li><p>define sets of rules how <strong>two or more objects should interact with one another</strong> </p>
+</li>
+<li><p>serve as <strong>specifications</strong>  rather than implementations</p>
+<p>(eg. HTTP)</p>
+</li>
+</ul>
+<h3 id="HTTP-Protocol-Statelessness"><a href="#HTTP-Protocol-Statelessness" class="headerlink" title="HTTP Protocol: Statelessness"></a>HTTP Protocol: Statelessness</h3><ul>
+<li>web servers are said to be <strong>stateless</strong>, meaning that once a request from a client application is fulfilled, the web server <strong>disconnects from the client and “forgets” that the client ever connected</strong></li>
+</ul>
+<h3 id="Email"><a href="#Email" class="headerlink" title="Email"></a>Email</h3><ul>
+<li><strong>more complex</strong> system than ‘the Web’</li>
+<li>has to be in exactly one place at any one time<ul>
+<li>if it is in <strong>two</strong> places at the same time then it has been <strong>duplicated accidentally</strong></li>
+<li>If it is in <strong>zero</strong> places then it has been <strong>lost in the system</strong>, in detriment(harmed or damaged) of the sender and the recipient of that email</li>
+</ul>
+</li>
+</ul>
+<h4 id="Email-Associated-Protocols"><a href="#Email-Associated-Protocols" class="headerlink" title="Email Associated Protocols"></a>Email Associated Protocols</h4><ul>
+<li>The <strong>simple mail transport protocol</strong> (SMTP)<ul>
+<li>connection based</li>
+<li>a client (mail agent) can issue multiple consecutive comments to the SMTP server, and should <strong>explicitly</strong> terminate its connection when its finished</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -196,6 +248,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/05/09/DS-week4/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2023/05/09/DS-week3/">(no title)</a>
