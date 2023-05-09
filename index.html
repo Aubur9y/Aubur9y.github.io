@@ -71,6 +71,116 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DS-week10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/09/DS-week10/" class="article-date">
+  <time class="dt-published" datetime="2023-05-09T14:40:48.000Z" itemprop="datePublished">2023-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/09/DS-week10/">DS-week10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Fault-Tolerance"><a href="#Fault-Tolerance" class="headerlink" title="Fault Tolerance"></a>Fault Tolerance</h3><ul>
+<li>Strongly associated with <strong>dependable systems</strong><ul>
+<li>availablity: the probability that the system operates correctly at any given moment 能正确运行的概率</li>
+<li>reliability: length of time that it can run continuously without failure 能正确运行的连续市场</li>
+<li>safety: if and when failures occur, the consequences are not catastrophic for the system 如果发生错误，对于系统不是灾难性的</li>
+<li>maintainability: how easily a failed system can be repaired 维修难度</li>
+</ul>
+</li>
+<li>building dependable, fault tolerant systems relates to <strong>controlling faults</strong></li>
+</ul>
+<h3 id="Types-of-Failures"><a href="#Types-of-Failures" class="headerlink" title="Types of Failures"></a>Types of Failures</h3><ul>
+<li>crash failure: halts, but working correctly until it halts</li>
+<li>omission failure(遗漏): fails to respond to incoming requests<ul>
+<li>receive omission: fails to receive</li>
+<li>Send omission: fails to send</li>
+</ul>
+</li>
+<li>Timing failure: Response lies outside a specified time interval</li>
+<li>Response failure: response is incorrect<ul>
+<li>value failure: value is wrong</li>
+<li>State_transition failure: deviates from the correct flow of control</li>
+</ul>
+</li>
+<li>Arbitrary failure: may produce arbitrary responses at arbitrary times</li>
+<li>When arbitrary failures occur, clients should be prepared for the worst</li>
+</ul>
+<p><strong>Arbitrary failures are also known as Byzantine failures</strong></p>
+<h3 id="Redundancy-in-Masking-Failures"><a href="#Redundancy-in-Masking-Failures" class="headerlink" title="Redundancy in Masking Failures"></a>Redundancy in Masking Failures</h3><ul>
+<li>Physical redundancy</li>
+<li>Time redundancy: an action is performed if needed, again and again, helpful when faults are transient(短时间的) and intermittent(断断续续的)</li>
+<li>Information redundancy: eg. send extra bits</li>
+<li>should improve performance, but keeping replicas consistency can damage performance</li>
+</ul>
+<h3 id="All-or-Nothing-THe-need-for-Atomicity"><a href="#All-or-Nothing-THe-need-for-Atomicity" class="headerlink" title="All-or-Nothing: THe need for Atomicity"></a>All-or-Nothing: THe need for Atomicity</h3><ul>
+<li>Either ALL operations execute or NONE</li>
+</ul>
+<h3 id="Isolated-Execution-The-need-for-Isolation"><a href="#Isolated-Execution-The-need-for-Isolation" class="headerlink" title="Isolated Execution - The need for Isolation"></a>Isolated Execution - The need for Isolation</h3><ul>
+<li>ensure that “concurrent” applications do not interfere with each other</li>
+</ul>
+<h3 id="Seial-Executions"><a href="#Seial-Executions" class="headerlink" title="Seial Executions"></a>Seial Executions</h3><ul>
+<li>concurrent executions do not interfere with each other if their execution is equavalent to a serial one<ul>
+<li>one transfer at a time</li>
+<li>not scalable and very very slow</li>
+</ul>
+</li>
+</ul>
+<h3 id="ACID"><a href="#ACID" class="headerlink" title="ACID"></a>ACID</h3><ul>
+<li>atomicity: all or nothing, either completed in its entriety or not at all</li>
+<li>consistency: all constraints, rules and relationships are maintained throughout the transaction(kept up-to-date)一致性</li>
+<li>isolation: concurrent transactions being executed as if they were the only transactions in the system, this ensures the outcome is not affected by the concurrent execution of other transactions 合流的交易分别看作自己独立的交易确保不会被同时进行的另一个交易干扰</li>
+<li>durability: once a transaction is commited, its changes must be permanent and survive any subsequent system failures or errors, this ensures the data remains consistent and reliable</li>
+</ul>
+<h3 id="How-Transactions-are-Implemented"><a href="#How-Transactions-are-Implemented" class="headerlink" title="How Transactions are Implemented"></a>How Transactions are Implemented</h3><ul>
+<li>Managing multiple simutaneous users<ul>
+<li>Concurrency control algorithms</li>
+</ul>
+</li>
+<li>Durability<ul>
+<li>Recovery algorithms</li>
+</ul>
+</li>
+</ul>
+<h3 id="Concurrency-Control"><a href="#Concurrency-Control" class="headerlink" title="Concurrency Control"></a>Concurrency Control</h3><ul>
+<li>Acquire locks phase<ul>
+<li>get a read lock before read</li>
+<li>get a write lock before write</li>
+<li>Read lock conflict with write lock</li>
+<li>write lock conflict with read and write lock</li>
+</ul>
+</li>
+<li>Release locks phase: where transaction terminates</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/09/DS-week10/" data-id="clhgeoyoh0000zpdt894jadas" data-title="DS-week10" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-DS-week9" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/09/DS-week9/" class="article-date">
@@ -819,6 +929,10 @@
       <ul>
         
           <li>
+            <a href="/2023/05/09/DS-week10/">DS-week10</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/09/DS-week9/">DS-week9</a>
           </li>
         
@@ -832,10 +946,6 @@
         
           <li>
             <a href="/2023/05/09/DS-week6/">DS-week6</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/09/DS-week5/">DS-week5</a>
           </li>
         
       </ul>
