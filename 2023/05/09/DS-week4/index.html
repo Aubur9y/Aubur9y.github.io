@@ -6,15 +6,24 @@
   
   <title>Week4 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="A Simple Machine A machine makes available computing and storage resources  computing resource, eg. CPU storage resource, eg. a given amount of primary memory   A process is an executing instance of a">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Week4">
 <meta property="og:url" content="http://example.com/2023/05/09/DS-week4/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="A Simple Machine A machine makes available computing and storage resources  computing resource, eg. CPU storage resource, eg. a given amount of primary memory   A process is an executing instance of a">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-09T09:39:37.100Z">
-<meta property="article:modified_time" content="2023-05-09T10:28:30.110Z">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/1.png">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/2.png">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/3.png">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/4.png">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/5.png">
+<meta property="og:image" content="http://example.com/2023/05/09/DS-week4/6.png">
+<meta property="article:published_time" content="2023-05-09T11:46:02.765Z">
+<meta property="article:modified_time" content="2023-05-09T11:57:34.125Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/05/09/DS-week4/1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -74,7 +83,7 @@
         <section id="main"><article id="post-DS-week4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/09/DS-week4/" class="article-date">
-  <time class="dt-published" datetime="2023-05-09T09:39:37.100Z" itemprop="datePublished">2023-05-09</time>
+  <time class="dt-published" datetime="2023-05-09T11:46:02.765Z" itemprop="datePublished">2023-05-09</time>
 </a>
     
   </div>
@@ -93,11 +102,97 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h3 id="A-Simple-Machine"><a href="#A-Simple-Machine" class="headerlink" title="A Simple Machine"></a>A Simple Machine</h3><ul>
+<li>A machine makes available <strong>computing</strong> and <strong>storage resources</strong> <ul>
+<li>computing resource, eg. CPU</li>
+<li>storage resource, eg. a given amount of primary memory</li>
+</ul>
+</li>
+<li>A process is an executing instance of a program</li>
+<li><strong>Computing and Resource usage</strong> are typically <strong>controlled</strong> by and operating system</li>
+<li>an OS aims to make <strong>the most efficient use possible</strong> of those resources</li>
+<li>the OS assigns a <strong>unique identity to each process</strong> and then controls how a process is granted access to computing resources</li>
+<li>the OS also controls how a process is granted access to storage resoures by assigning an address space to that process</li>
+<li>when the OS ensures that <strong>each process P has a single address space A that is exclusive to P</strong>, we are allowed a <strong>sequential reading of the steps that comprise the process</strong></li>
+</ul>
+<h3 id="Sequential-reading-of-the-steps-that-comprise-the-process"><a href="#Sequential-reading-of-the-steps-that-comprise-the-process" class="headerlink" title="Sequential reading of the steps that comprise the process"></a>Sequential reading of the steps that comprise the process</h3><img src="/2023/05/09/DS-week4/1.png" class="">
+
+<ul>
+<li>The OS ensures that no other process tampers with x and y, and only foobar has access to x and y</li>
+</ul>
+<h3 id="Sequential-processing"><a href="#Sequential-processing" class="headerlink" title="Sequential processing"></a>Sequential processing</h3><ul>
+<li>if foo and bar take long to run, we wish to run them <strong>concurrently, in different processes</strong>, and even better, in <strong>parallel, in different processors</strong></li>
+</ul>
+<p>Sequential, isolated processing is <strong>simple</strong>, but bounded and <strong>limiting</strong></p>
+<ul>
+<li><strong>Non sequential</strong>, <strong>non isolated</strong> processing expands the bounds and limits with respect to <strong>performance</strong></li>
+</ul>
+<h2 id="Sequential-vs-Multi-Processing-Concurrent-Parallel-and-Distributed-Computing"><a href="#Sequential-vs-Multi-Processing-Concurrent-Parallel-and-Distributed-Computing" class="headerlink" title="Sequential vs. Multi-Processing, Concurrent, Parallel and Distributed Computing"></a>Sequential vs. Multi-Processing, Concurrent, Parallel and Distributed Computing</h2><h3 id="Multi-Processing-vs-Multi-Tasking"><a href="#Multi-Processing-vs-Multi-Tasking" class="headerlink" title="Multi-Processing vs. Multi-Tasking"></a>Multi-Processing vs. Multi-Tasking</h3><ul>
+<li>Two different concepts</li>
+<li>An OS multi tasks by:<ul>
+<li>allowing more than one process to be underway by <strong>controlling</strong> how each one makes use of the <strong>resources</strong> allocated to it </li>
+<li>implementing a scheduling policy, which  grants <strong>each active process</strong> a <strong>time slice</strong> during which it can <strong>access the resources</strong> allocated to it</li>
+</ul>
+</li>
+<li>In multi-tasking, processes are <strong>not really exeuting concurrently</strong></li>
+<li>the appearance of concurrent execution stems from an <strong>effective scheduling policy</strong></li>
+<li>If all processes get a fair share of the resource and they get it sufficiently often, it seems to users that all processes are execcuting concurrently</li>
+</ul>
+<h3 id="Multi-Processing-by-Forking"><a href="#Multi-Processing-by-Forking" class="headerlink" title="Multi-Processing by Forking"></a>Multi-Processing by Forking</h3><ul>
+<li><p>causes <strong>two copies</strong> of itself to be active <strong>concurrently</strong></p>
+</li>
+<li><p>The child process is given a copy of the parent process’s address space. The address spaces are <strong>distince</strong></p>
+<ul>
+<li>the child process starts executing after the OS call</li>
+<li>the parent can continue or wait for the child to execute</li>
+<li>the parent must find out how and when the child completes execution</li>
+</ul>
+</li>
+<li><p>because of the copying, forking can be <strong>expansive</strong></p>
+</li>
+<li><p><strong>modern OSs</strong> have strategies that make the actual cost quite <strong>affordable</strong></p>
+</li>
+<li><p>forking is reasonably <strong>safe</strong> because the address spaces are <strong>distinct</strong></p>
+</li>
+<li><p>When <strong>forking</strong> is used in multi-processing, <strong>consistency of processing results is more likely to occur</strong> than in cases where multi-processing is achieved by <strong>threading</strong></p>
+<img src="/2023/05/09/DS-week4/2.png" class=""></li>
+</ul>
+<h3 id="Multi-Processing-by-Threading"><a href="#Multi-Processing-by-Threading" class="headerlink" title="Multi-Processing by Threading"></a>Multi-Processing by Threading</h3><ul>
+<li><p>if parent and child need to <strong>interact and share</strong>, threading may be a better approach to multi-tasking</p>
+</li>
+<li><p>with threading, <strong>the address space is not copied, it is shared</strong></p>
+<ul>
+<li><p>this means that if one process changes a variable, all other processes see it</p>
+</li>
+<li><p>this makes threading less <strong>expensive</strong>, but also less face than forking</p>
+<img src="/2023/05/09/DS-week4/3.png" class=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="Concurrent-Computing"><a href="#Concurrent-Computing" class="headerlink" title="Concurrent Computing"></a>Concurrent Computing</h3><ul>
+<li><p>consider **many ** application processes</p>
+</li>
+<li><p>processes are often <strong>threads</strong> (the OS schedules the execution of n copies of process Pi, 1&lt;&#x3D; i &lt;&#x3D; n, to run in the same processor, typically sharing a single address space)</p>
+<img src="/2023/05/09/DS-week4/4.png" class=""></li>
+</ul>
+<h3 id="Parallel-Computing"><a href="#Parallel-Computing" class="headerlink" title="Parallel Computing"></a>Parallel Computing</h3><ul>
+<li><p>many processors bound by and interconnect (eg. a bus)</p>
+</li>
+<li><p>there is <strong>truly many</strong> processes running at the same time</p>
+<img src="/2023/05/09/DS-week4/5.png" class=""></li>
+</ul>
+<h3 id="Distributed-Computing"><a href="#Distributed-Computing" class="headerlink" title="Distributed Computing"></a>Distributed Computing</h3><ul>
+<li>many independent, self-sufficient, autonomous, heterogeneous machines</li>
+<li>spatial separation</li>
+<li>message exchange is needed, network effects are felt</li>
+<li>complexity may reach a point in which applications are not written against OS services. Instead, they are written against a middleware API. The middleware then takes some of the complexity upon itself</li>
+<li><img src="/2023/05/09/DS-week4/6.png" class=""></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/09/DS-week4/" data-id="clhg4q6m10001fbdtbc6339ru" data-title="Week4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/05/09/DS-week4/" data-id="clhg7e72u0001tddt07ts407i" data-title="Week4" class="article-share-link">Share</a>
       
       
       
