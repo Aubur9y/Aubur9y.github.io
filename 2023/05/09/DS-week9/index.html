@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>DS-week6 | Notes</title>
+  <title>DS-week9 | Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Inter-Process Communication the way processes on different machines can exchange information low-level message passing, offered by the underlying network Two models for communication: Remote Procedure">
+  <meta name="description" content="Service-Oriented Architectural Style encapsulated services into independent units server is a discrete unit of functionality and can be accessed remotely composition of many different services 模块化 使用中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DS-week6">
-<meta property="og:url" content="http://example.com/2023/05/09/DS-week6/index.html">
+<meta property="og:title" content="DS-week9">
+<meta property="og:url" content="http://example.com/2023/05/09/DS-week9/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="Inter-Process Communication the way processes on different machines can exchange information low-level message passing, offered by the underlying network Two models for communication: Remote Procedure">
+<meta property="og:description" content="Service-Oriented Architectural Style encapsulated services into independent units server is a discrete unit of functionality and can be accessed remotely composition of many different services 模块化 使用中">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-09T12:59:47.000Z">
-<meta property="article:modified_time" content="2023-05-09T13:15:48.346Z">
+<meta property="article:published_time" content="2023-05-09T14:23:46.000Z">
+<meta property="article:modified_time" content="2023-05-09T14:35:48.105Z">
 <meta property="article:author" content="Qi Xiang">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-DS-week6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-DS-week9" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/09/DS-week6/" class="article-date">
-  <time class="dt-published" datetime="2023-05-09T12:59:47.000Z" itemprop="datePublished">2023-05-09</time>
+    <a href="/2023/05/09/DS-week9/" class="article-date">
+  <time class="dt-published" datetime="2023-05-09T14:23:46.000Z" itemprop="datePublished">2023-05-09</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      DS-week6
+      DS-week9
     </h1>
   
 
@@ -95,41 +95,19 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="Inter-Process-Communication"><a href="#Inter-Process-Communication" class="headerlink" title="Inter-Process Communication"></a>Inter-Process Communication</h3><ul>
-<li>the way processes on different machines can exchange information</li>
-<li><strong>low-level message passing</strong>, offered by the <strong>underlying network</strong></li>
-<li>Two models for communication:<ul>
-<li>Remote Procedure Call (RPC)</li>
-<li>Message-Oriented Middleware (MOM)</li>
-</ul>
-</li>
-</ul>
-<h3 id="Remote-Procedure-Call"><a href="#Remote-Procedure-Call" class="headerlink" title="Remote Procedure Call"></a>Remote Procedure Call</h3><ul>
-<li>aims at <strong>hiding</strong> most of the intricacies(复杂) of <strong>message passing</strong></li>
-<li>ideal for <strong>client-server applications</strong></li>
-</ul>
-<p>Example:</p>
-<p>newlist &#x3D; append(data, dblist)</p>
-<p>Append is a RPC, <strong>client stub</strong> is offered to the calling client, the client send to server and client stub calls receive, blocking itself until reply comes back. When message arrive at server, server’s OS passes it to a <strong>server stub</strong>, unpack and call server procedure, the server perform and return the results to the server stub</p>
-<h3 id="Parameter-Passing"><a href="#Parameter-Passing" class="headerlink" title="Parameter Passing"></a>Parameter Passing</h3><ul>
-<li>parameter marshalling (transforming data from one representation or format to another)</li>
-<li>not straightforward</li>
-<li>solution is to transform data into a <strong>machine and network-independent format</strong> making sure that <strong>both communicating parties expect the same message data type</strong></li>
-</ul>
-<h3 id="Asynchronous-RPCS"><a href="#Asynchronous-RPCS" class="headerlink" title="Asynchronous RPCS"></a>Asynchronous RPCS</h3><ul>
-<li>client will continue without blocking as soon as the server receive the message</li>
-</ul>
-<h3 id="Message-Oriented-Middleware"><a href="#Message-Oriented-Middleware" class="headerlink" title="Message-Oriented Middleware"></a>Message-Oriented Middleware</h3><ul>
-<li>message-queuing</li>
-<li>persistent asynchronous commuication</li>
-<li>sender posts a message in the queue, receiver retrieves the message form the queue</li>
-<li>apps communicate by <strong>inserting messages in specific queues</strong></li>
+        <h3 id="Service-Oriented-Architectural-Style"><a href="#Service-Oriented-Architectural-Style" class="headerlink" title="Service-Oriented Architectural Style"></a>Service-Oriented Architectural Style</h3><ul>
+<li>encapsulated services into independent units</li>
+<li>server is a <strong>discrete unit of functionality</strong> and can be <strong>accessed remotely</strong></li>
+<li>composition of many different services</li>
+<li>模块化</li>
+<li>使用中间件来保证软件和系统的灵活交流和整合</li>
+<li>each service must offer and interface</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/09/DS-week6/" data-id="clhgaoooo0000htdt4vbwg3yn" data-title="DS-week6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/05/09/DS-week9/" data-id="clhgdjjtw0000tkdt826z6vsm" data-title="DS-week9" class="article-share-link">Share</a>
       
       
       
@@ -139,19 +117,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/05/09/DS-week7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          DS-week7
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/05/09/DS-week5/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/05/09/DS-week8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">DS-week5</div>
+      <div class="article-nav-title">DS-week8</div>
     </a>
   
 </nav>
