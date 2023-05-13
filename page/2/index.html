@@ -71,6 +71,153 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DS-week5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/09/DS-week5/" class="article-date">
+  <time class="dt-published" datetime="2023-05-09T12:05:39.000Z" itemprop="datePublished">2023-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/09/DS-week5/">DS-week5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Architectures-of-Distributed-Systems"><a href="#Architectures-of-Distributed-Systems" class="headerlink" title="Architectures of Distributed Systems"></a>Architectures of Distributed Systems</h3><ul>
+<li>An obvious way to distinguish between distributed systems is on the organisation of their <strong>software components</strong>, in other words, their <strong>software architecture</strong><ul>
+<li>Centralised architectures (eg. traditional client-server)</li>
+<li>Decentralised architectures (eg. p2p)</li>
+<li>Hybrid architectures</li>
+</ul>
+</li>
+</ul>
+<h3 id="Software-Architectural-Styles"><a href="#Software-Architectural-Styles" class="headerlink" title="Software Architectural Styles"></a>Software Architectural Styles</h3><ul>
+<li>A software architectural style is formulated in terms of <strong>components</strong>, the way <strong>that components are conencted to each otters</strong>, <strong>data exchange</strong> between components, and how elements are <strong>jointly configured</strong> into a system</li>
+<li>A variety of architectural styles<ul>
+<li>Layered architectural styles</li>
+<li>Object-based architectural styles</li>
+<li>Resource_centered architectural styles</li>
+<li>Event-based architectural styles</li>
+</ul>
+</li>
+</ul>
+<h3 id="Layered-Architectural-Style"><a href="#Layered-Architectural-Style" class="headerlink" title="Layered Architectural Style"></a>Layered Architectural Style</h3><ul>
+<li><p>Lj can make downcall to Li (i&lt;j) and expects a response</p>
+</li>
+<li><p>bottom layers provide services to top layers</p>
+</li>
+<li><p>request flow from top to bottom, response from bottom to top</p>
+<img src="/2023/05/09/DS-week5/1.png" class=""></li>
+</ul>
+<h3 id="Object-Based-Architectural-Style"><a href="#Object-Based-Architectural-Style" class="headerlink" title="Object-Based Architectural Style"></a>Object-Based Architectural Style</h3><ul>
+<li><p>each object coresponds to a component, and component connect through procedure call in a network</p>
+</li>
+<li><p>provides a way of encapsulating data and operations into a single entity</p>
+</li>
+<li><p>Communication happen as method invocations, called <strong>Remote Procedure Calls (RPC)</strong></p>
+<img src="/2023/05/09/DS-week5/2.png" class=""></li>
+</ul>
+<h3 id="Resource-Centered-Architectural-Style"><a href="#Resource-Centered-Architectural-Style" class="headerlink" title="Resource-Centered Architectural Style"></a>Resource-Centered Architectural Style</h3><ul>
+<li><p>A DS is viewed as a huge collection of resources that individually managed by components</p>
+</li>
+<li><p>based on a data centre</p>
+<img src="/2023/05/09/DS-week5/3.png" class=""></li>
+</ul>
+<h3 id="The-Event-Based-Architectural-Style"><a href="#The-Event-Based-Architectural-Style" class="headerlink" title="The Event-Based Architectural Style"></a>The Event-Based Architectural Style</h3><ul>
+<li><p>processes running on various components are both <strong>referentially decoupled</strong> and <strong>temporally coupled</strong>, one process does not explicitly know any other process</p>
+</li>
+<li><p>the only thing a process can do is <strong>publish</strong> a <strong>notification</strong> describing the occurence of an event</p>
+</li>
+<li><p>processes may <strong>subscribe</strong> to a specific kind of notification</p>
+<img src="/2023/05/09/DS-week5/4.png" class=""></li>
+</ul>
+<h3 id="Centralised-System-Architecture"><a href="#Centralised-System-Architecture" class="headerlink" title="Centralised System Architecture"></a>Centralised System Architecture</h3><ul>
+<li>A server and a client</li>
+</ul>
+<h3 id="Multi-Tiered-Client-Server-Architectures"><a href="#Multi-Tiered-Client-Server-Architectures" class="headerlink" title="Multi-Tiered Client-Server Architectures"></a>Multi-Tiered Client-Server Architectures</h3><ul>
+<li>Three logical tiers</li>
+<li>Two types of machines<ul>
+<li>a client machine</li>
+<li>a server machine</li>
+</ul>
+</li>
+<li>All functinality is handled by the server, client is no more than a dumb terminal</li>
+<li>Many distributed applications are divided into the three layes<ul>
+<li>user interface layer</li>
+<li>processing layer</li>
+<li>data layer</li>
+</ul>
+</li>
+<li>The main challenge to clients and servers is to distribute these layers across different machines</li>
+<li>A server may sometimes act as a client</li>
+</ul>
+<h3 id="Decentralised-System-Architectures-P2P"><a href="#Decentralised-System-Architectures-P2P" class="headerlink" title="Decentralised System Architectures: P2P"></a>Decentralised System Architectures: P2P</h3><ul>
+<li>better <strong>workload balance</strong></li>
+<li><strong>a client or server may be physically split up into a number of logical parts</strong>, this is <strong>horizontal distribution</strong></li>
+<li>each process will act as a client and a server</li>
+<li>processes are organised in an <strong>overlay network</strong></li>
+<li>two types of overlay networks:<ul>
+<li>structured</li>
+<li>unstructured</li>
+</ul>
+</li>
+</ul>
+<h3 id="Structured-P2P-Systems"><a href="#Structured-P2P-Systems" class="headerlink" title="Structured P2P Systems"></a>Structured P2P Systems</h3><ul>
+<li>nodes are organised in an overlay that adheres to a <strong>specific</strong>, deterministic <strong>topology</strong> (eg. a ring, a binary tree, a grid etc)</li>
+<li>topology used to efficiently loop up data</li>
+<li>and node can be asked to loop up a given key</li>
+</ul>
+<h3 id="Unstructured-P2P-Systems"><a href="#Unstructured-P2P-Systems" class="headerlink" title="Unstructured P2P Systems"></a>Unstructured P2P Systems</h3><ul>
+<li>each node maintains an <strong>ad hoc(临时的) list of neighbours</strong>, eg. <strong>random graph</strong></li>
+<li>changes its local list almost continuously</li>
+<li>searching for data is necessary</li>
+</ul>
+<h3 id="Examples-of-Searching-Methods"><a href="#Examples-of-Searching-Methods" class="headerlink" title="Examples of Searching Methods"></a>Examples of Searching Methods</h3><ul>
+<li>Flooding</li>
+<li>Random Walks</li>
+</ul>
+<h3 id="Making-Data-Search-more-Scalable-in-Unstructured-P2P"><a href="#Making-Data-Search-more-Scalable-in-Unstructured-P2P" class="headerlink" title="Making Data Search more Scalable in Unstructured P2P"></a>Making Data Search more Scalable in Unstructured P2P</h3><ul>
+<li>to improve <strong>scalability of data search</strong>, it make use of <strong>special nodes</strong> that maintain an <strong>index of data items</strong>, creating special collaborations among <strong>nodes</strong></li>
+</ul>
+<h3 id="Collaborative-Distributed-Systems"><a href="#Collaborative-Distributed-Systems" class="headerlink" title="Collaborative Distributed Systems"></a>Collaborative Distributed Systems</h3><ul>
+<li>BitTorrent (download from other users until form a complete file)</li>
+<li>global directory</li>
+<li>contains a link to the <strong>file tracker</strong>, a server of <strong>active nodes</strong></li>
+</ul>
+<h3 id="Edge-Server-Systems"><a href="#Edge-Server-Systems" class="headerlink" title="Edge-Server Systems"></a>Edge-Server Systems</h3><ul>
+<li>following properties<ul>
+<li>Are deployed on the internet</li>
+<li>servers are placed “at the edge” of the network</li>
+</ul>
+</li>
+<li>helps reduce latency, bandwidth usage and improves overall performance</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/09/DS-week5/" data-id="clhg9wg7h0000eqdth4nnho94" data-title="DS-week5" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-DS-week4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/09/DS-week4/" class="article-date">
@@ -369,6 +516,10 @@
       <ul>
         
           <li>
+            <a href="/2023/05/13/DS-week2/">DS-week2</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/13/DS-week1/">DS-week1</a>
           </li>
         
@@ -382,10 +533,6 @@
         
           <li>
             <a href="/2023/05/09/DS-week11/">DS-week11</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/09/DS-week10/">DS-week10</a>
           </li>
         
       </ul>
