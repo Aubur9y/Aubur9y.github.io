@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>DS-week6 | Notes</title>
+  <title>DS-week1 | Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Inter-Process Communication the way processes on different machines can exchange information low-level message passing, offered by the underlying network Two models for communication: Remote Procedure">
+  <meta name="description" content="Why Distributed Systems To share resources To bind customers and suupliers To allow us to do things we could not otherwise do, due to performance, scalability, reliability and availability issues  Wha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DS-week6">
-<meta property="og:url" content="http://example.com/2023/05/09/DS-week6/index.html">
+<meta property="og:title" content="DS-week1">
+<meta property="og:url" content="http://example.com/2023/05/13/DS-week1/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description" content="Inter-Process Communication the way processes on different machines can exchange information low-level message passing, offered by the underlying network Two models for communication: Remote Procedure">
+<meta property="og:description" content="Why Distributed Systems To share resources To bind customers and suupliers To allow us to do things we could not otherwise do, due to performance, scalability, reliability and availability issues  Wha">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-09T12:59:47.000Z">
-<meta property="article:modified_time" content="2023-05-09T13:15:48.346Z">
+<meta property="article:published_time" content="2023-05-13T11:31:24.000Z">
+<meta property="article:modified_time" content="2023-05-13T11:40:47.689Z">
 <meta property="article:author" content="Qi Xiang">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-DS-week6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-DS-week1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/05/09/DS-week6/" class="article-date">
-  <time class="dt-published" datetime="2023-05-09T12:59:47.000Z" itemprop="datePublished">2023-05-09</time>
+    <a href="/2023/05/13/DS-week1/" class="article-date">
+  <time class="dt-published" datetime="2023-05-13T11:31:24.000Z" itemprop="datePublished">2023-05-13</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      DS-week6
+      DS-week1
     </h1>
   
 
@@ -95,41 +95,40 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="Inter-Process-Communication"><a href="#Inter-Process-Communication" class="headerlink" title="Inter-Process Communication"></a>Inter-Process Communication</h3><ul>
-<li>the way processes on different machines can exchange information</li>
-<li><strong>low-level message passing</strong>, offered by the <strong>underlying network</strong></li>
-<li>Two models for communication:<ul>
-<li>Remote Procedure Call (RPC)</li>
-<li>Message-Oriented Middleware (MOM)</li>
+        <h3 id="Why-Distributed-Systems"><a href="#Why-Distributed-Systems" class="headerlink" title="Why Distributed Systems"></a>Why Distributed Systems</h3><ul>
+<li>To share resources</li>
+<li>To bind customers and suupliers</li>
+<li>To allow us to do things we could not otherwise do, due to performance, scalability, reliability and availability issues</li>
+</ul>
+<h3 id="What-is-a-Distributed-System"><a href="#What-is-a-Distributed-System" class="headerlink" title="What is a Distributed System"></a>What is a Distributed System</h3><ul>
+<li>A distributed system is a collection of autonomous <strong>computing elements</strong> that appears to its users as a <strong>single coherent system</strong></li>
+</ul>
+<h3 id="Charateristics-of-Distributed-Systems"><a href="#Charateristics-of-Distributed-Systems" class="headerlink" title="Charateristics of Distributed Systems"></a>Charateristics of Distributed Systems</h3><ul>
+<li>Distributed systems can also vary in<ul>
+<li>size</li>
+<li>the way in which nodes are interconnected</li>
+<li>the way in which node membership is handled</li>
 </ul>
 </li>
+<li>Although nodes can act independently from one another, they cannot ignore one another</li>
+<li>Nodes are programmed to achieve common goals, and they do this by <strong>exchanging messages</strong> with each other</li>
+<li>To appear to users as a single coherent system, <strong>distribution transparency</strong> is an important goal of distributed systems</li>
 </ul>
-<h3 id="Remote-Procedure-Call"><a href="#Remote-Procedure-Call" class="headerlink" title="Remote Procedure Call"></a>Remote Procedure Call</h3><ul>
-<li>aims at <strong>hiding</strong> most of the intricacies(复杂) of <strong>message passing</strong></li>
-<li>ideal for <strong>client-server applications</strong></li>
-</ul>
-<p>Example:</p>
-<p>newlist &#x3D; append(data, dblist)</p>
-<p>Append is a RPC, <strong>client stub</strong> is offered to the calling client, the client send to server and client stub calls receive, blocking itself until reply comes back. When message arrive at server, server’s OS passes it to a <strong>server stub</strong>, unpack and call server procedure, the server perform and return the results to the server stub</p>
-<h3 id="Parameter-Passing"><a href="#Parameter-Passing" class="headerlink" title="Parameter Passing"></a>Parameter Passing</h3><ul>
-<li>parameter marshalling (transforming data from one representation or format to another)</li>
-<li>not straightforward</li>
-<li>solution is to transform data into a <strong>machine and network-independent format</strong> making sure that <strong>both communicating parties expect the same message data type</strong></li>
-</ul>
-<h3 id="Asynchronous-RPCS"><a href="#Asynchronous-RPCS" class="headerlink" title="Asynchronous RPCS"></a>Asynchronous RPCS</h3><ul>
-<li>client will continue without blocking as soon as the server receive the message</li>
-</ul>
-<h3 id="Message-Oriented-Middleware"><a href="#Message-Oriented-Middleware" class="headerlink" title="Message-Oriented Middleware"></a>Message-Oriented Middleware</h3><ul>
-<li>message-queuing</li>
-<li>persistent asynchronous commuication</li>
-<li>sender posts a message in the queue, receiver retrieves the message form the queue</li>
-<li>apps communicate by <strong>inserting messages in specific queues</strong></li>
-</ul>
+<h3 id="Fallacy-谬论-about-Distributed-Systems"><a href="#Fallacy-谬论-about-Distributed-Systems" class="headerlink" title="Fallacy(谬论) about Distributed Systems"></a>Fallacy(谬论) about Distributed Systems</h3><ol>
+<li>The network is reliable</li>
+<li>The network is secure</li>
+<li>The network is homogeneous(linux and windows)</li>
+<li>The topology does not change</li>
+<li>Latency is zero</li>
+<li>Bandwidth is infinite</li>
+<li>Transport cost is zero</li>
+<li>There is one administrator</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/09/DS-week6/" data-id="clhgaoooo0000htdt4vbwg3yn" data-title="DS-week6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/05/13/DS-week1/" data-id="clhlx20lv0000n0dt2ksb5ten" data-title="DS-week1" class="article-share-link">Share</a>
       
       
       
@@ -139,19 +138,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/05/09/DS-week7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          DS-week7
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/05/09/DS-week5/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/05/10/ML-week2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">DS-week5</div>
+      <div class="article-nav-title">ML-week2</div>
     </a>
   
 </nav>
